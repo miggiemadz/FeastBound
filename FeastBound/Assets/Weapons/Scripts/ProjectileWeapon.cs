@@ -20,10 +20,6 @@ public class ProjectileWeapon : Weapon
                     "Single Reload" reloads the gun bullet by bullet and can be interrupted by the player. */
     private String reloadType;
 
-    /* WEAPON TYPE: "Bullet Type" is a weapon that fires seperate pellets at different rates.              
-                "Beam Type" is a weapon that fires a continuous beam that does damage over time. */
-    private String weaponType;
-
     // BULLET SPREAD: How far at an angle each bullet fires. 
     [SerializeField] private float bulletSpread;
 
@@ -38,4 +34,18 @@ public class ProjectileWeapon : Weapon
     public int GetTotalAmmo() => this.totalAmmo;
     public float GetReloadSpeed() => this.reloadSpeed;
     public float GetBulletSpread() => this.bulletSpread;
+
+    private void Reload()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            Debug.Log("Reloading");
+        }
+    }
+
+    private void Update()
+    {
+        Fire();
+        Swap();
+    }
 }

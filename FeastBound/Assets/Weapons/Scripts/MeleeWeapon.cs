@@ -13,6 +13,7 @@ public class MeleeWeapon : Weapon
     // Update is called once per frame
     void Update()
     {
-        
+        Fire();
+        Swap();
     }
 }

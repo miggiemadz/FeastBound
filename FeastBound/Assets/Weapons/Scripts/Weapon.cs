@@ -14,11 +14,15 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private float fireRate;
 
     // RARITY: How good and rare it is to encounter a weapon. From least to greatest those are "Well Done", "Medium Well", "Medium", "Medium Rare" & "Rare".
-    private String rarity;
+    [SerializeField] private String rarity;
 
     // BULLET SIZE: How big each bullet, beam or the melee weapon itself is. 
     [SerializeField] private float Size;
 
+    /* WEAPON TYPE: "Bullet Type" is a weapon that fires seperate pellets at different rates.              
+                    "Beam Type" is a weapon that fires a continuous beam that does damage over time.
+                    "Melee Type" is a weapon that attacks at close range and usually does not fire a projectile. */
+    [SerializeField] private String weaponType;
 
     // Variable Setters
     public void SetDamage(float damage) => this.damage = damage;
@@ -30,23 +34,25 @@ public class Weapon : MonoBehaviour {
     public float GetFireRate() => this.fireRate;
     public float GetSize() => this.Size;
 
-    private void Fire() 
+    protected void Fire() 
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (weaponType == "Melee" && Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("HIYAH!");
+        }
+        if (weaponType == "Bullet" && Input.GetMouseButtonDown(0))
+        {
             Debug.Log("Pew Pew");
         }
-    }
-
-    private void Reload() 
-    {
-        if (Input.GetKey(KeyCode.R)) {
-            Debug.Log("Reloading");
+        if (weaponType == "Beam" && Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("*Lazer Beam Sounds*");
         }
     }
 
-    private void Swap() 
+    protected void Swap() 
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Swapping");
         }
