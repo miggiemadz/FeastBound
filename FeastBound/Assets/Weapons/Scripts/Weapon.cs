@@ -33,22 +33,8 @@ public class Weapon : MonoBehaviour {
     public float GetDamage() => this.damage;
     public float GetFireRate() => this.fireRate;
     public float GetSize() => this.Size;
-
-    protected void Fire() 
-    {
-        if (weaponType == "Melee" && Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("HIYAH!");
-        }
-        if (weaponType == "Bullet" && Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Pew Pew");
-        }
-        if (weaponType == "Beam" && Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("*Lazer Beam Sounds*");
-        }
-    }
+    public String GetWeaponType() => this.weaponType;
+    public String GetWeaponRarity() => this.rarity;
 
     protected void Swap() 
     {
