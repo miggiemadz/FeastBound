@@ -6,18 +6,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    [Header("Universal Stats")]
-    // DAMAGE: A range of values that will determine how much hp enemies lose when they get hit (4-6 hp per hit).
-    [SerializeField] private float damage;
-
+    [Header("Universal Weapon Stats")]
     // FIRE RATE: How fast each bullet is fired from the gun. 
     [SerializeField] private float fireRate;
 
     // RARITY: How good and rare it is to encounter a weapon. From least to greatest those are "Well Done", "Medium Well", "Medium", "Medium Rare" & "Rare".
     [SerializeField] private String rarity;
-
-    // BULLET SIZE: How big each bullet, beam or the melee weapon itself is. 
-    [SerializeField] private float Size;
 
     /* WEAPON TYPE: "Bullet Type" is a weapon that fires seperate pellets at different rates.              
                     "Beam Type" is a weapon that fires a continuous beam that does damage over time.
@@ -25,14 +19,10 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private String weaponType;
 
     // Variable Setters
-    public void SetDamage(float damage) => this.damage = damage;
     public void SetFireRate(float rate) => this.fireRate = rate;
-    public void SetSize(float size) => this.Size = size;
 
     // Variable Getter
-    public float GetDamage() => this.damage;
     public float GetFireRate() => this.fireRate;
-    public float GetSize() => this.Size;
     public String GetWeaponType() => this.weaponType;
     public String GetWeaponRarity() => this.rarity;
 
