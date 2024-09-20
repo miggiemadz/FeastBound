@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileDamage: 0
   projectileSpeed: 10
-  projectileSize: 0
+  projectileSize: 0.05
   projectileType: Bullet
   projectileSource: Player
 --- !u!1 &7034142928608720402

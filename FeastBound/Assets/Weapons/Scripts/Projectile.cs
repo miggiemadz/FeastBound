@@ -43,6 +43,8 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        rb2d.velocity = new Vector2 (projectileSpeed, 0);
+        rb2d.velocity = new Vector2 (projectileSpeed, 0); // the bullet travels in a straight line after being fired. 
+
+        gameObject.transform.localScale = new Vector3 (projectileSize, projectileSize, 1);
     }
 }
