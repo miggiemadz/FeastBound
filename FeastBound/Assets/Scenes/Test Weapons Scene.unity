@@ -224,6 +224,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
+--- !u!1 &900074478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2614439436840519446, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
+  m_PrefabInstance: {fileID: 7475651290802358849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059449280
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2348423904916890781, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
+      propertyPath: gunSprite
+      value: 
+      objectReference: {fileID: 900074478}
     - target: {fileID: 2348423904916890781, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
       propertyPath: mainCamera
       value: 

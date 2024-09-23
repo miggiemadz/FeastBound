@@ -43,10 +43,9 @@ public class ProjectileWeapon : Weapon
     [SerializeField] private Transform bulletSpawnLocation;
 
     [Header("Camera")]
-
-    [SerializeField] private Camera mainCamera;
     private Vector3 mousePosition;
-    [SerializeField] private Transform weaponHandle;
+
+    [SerializeField] private GameObject gunSprite;
 
     // Setters
     public void SetCurrentAmmo(int amount) => this.currentAmmo = amount; 
@@ -59,6 +58,8 @@ public class ProjectileWeapon : Weapon
     public int GetTotalAmmo() => this.totalAmmo;
     public float GetReloadSpeed() => this.reloadSpeed;
     public float GetBulletSpread() => this.bulletSpread;
+    public float GetMousePosX() => this.mousePosition.x;
+    public float GetMousePosY() => this.mousePosition.y;
 
     private void Reload()
     {
@@ -82,16 +83,14 @@ public class ProjectileWeapon : Weapon
         currentAmmo -= 1;
         GameObject projectileClone;
         projectileClone = Instantiate(projectile, bulletSpawnLocation.position, Quaternion.identity);
+        Projectile projectileCloneScript = projectileClone.GetComponent<Projectile>();
+        projectileCloneScript.SetProjectileVelocity(GetMousePosX(), GetMousePosY());
         betweenFireTimeCounter = betweenFireTime; // resets the timer after every bullet is fired. 
     }
 
     private float GunRotation()
     {
-        float mouseDistance = Mathf.Sqrt(Mathf.Pow((Input.mousePosition.x - gameObject.transform.position.x),2) + 
-            Mathf.Pow((Input.mousePosition.y - gameObject.transform.position.y),2));
-
-        float mouseAngle = Mathf.Atan((mousePosition.y - weaponHandle.position.y) / 
-            (mousePosition.x - weaponHandle.position.x)) * 180/Mathf.PI;
+        float mouseAngle = Mathf.Atan2(mousePosition.y, mousePosition.x) * 180/Mathf.PI;
 
         return mouseAngle;
     }
@@ -110,11 +109,11 @@ public class ProjectileWeapon : Weapon
 
     private void Update()
     {
-        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Debug.Log(mousePosition.x + ", " + mousePosition.y);
+        Debug.Log(GetMousePosX() + ", " + GetMousePosY());
 
-        gameObject.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y,
+        gunSprite.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y,
             GunRotation());
 
         if (GetWeaponType() == "Bullet" && currentAmmo > 0)

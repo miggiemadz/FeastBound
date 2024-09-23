@@ -21,15 +21,23 @@ public class Projectile : MonoBehaviour
     // PROJECTILE SOURCE: Whether the bullet is fired from the Player or Enemy.
     [SerializeField] private String projectileSource;
 
-    [Header("Components")]
+    [Header("Bullet Components")]
     private Rigidbody2D rb2d;
 
     private Vector2 projectileMovement;
+
+    private float projectileVelocityX;
+    private float projectileVelocityY;
 
     // Setters
     public void SetProjectileDamage(float damage) => this.projectileDamage = damage;
     public void SetProjectileSpeed(float speed) => this.projectileSpeed = speed;
     public void SetProjectileSize(float size) => this.projectileSize = size;
+    public void SetProjectileVelocity(float x, float y)
+    {
+        this.projectileVelocityX = x;
+        this.projectileVelocityY = y;
+    }
 
     //Getters
     public float GetProjectileSpeed() => this.projectileSpeed;
@@ -43,8 +51,12 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        rb2d.velocity = new Vector2 (projectileSpeed, 0); // the bullet travels in a straight line after being fired. 
 
-        gameObject.transform.localScale = new Vector3 (projectileSize, projectileSize, 1);
+    }
+
+    private void Update()
+    {
+        rb2d.velocity = new Vector2(projectileVelocityX, projectileVelocityY).normalized * projectileSpeed; // the bullet travels in a straight line after being fired. 
+        gameObject.transform.localScale = new Vector3(projectileSize, projectileSize, 1);
     }
 }

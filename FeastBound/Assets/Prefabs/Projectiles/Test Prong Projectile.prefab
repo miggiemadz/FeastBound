@@ -114,6 +114,7 @@ MonoBehaviour:
   projectileSize: 0.05
   projectileType: Bullet
   projectileSource: Player
+  weaponPrefab: {fileID: 0}
 --- !u!1 &7034142928608720402
 GameObject:
   m_ObjectHideFlags: 0
