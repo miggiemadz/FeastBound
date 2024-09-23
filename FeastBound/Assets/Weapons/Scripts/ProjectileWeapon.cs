@@ -39,10 +39,8 @@ public class ProjectileWeapon : Weapon
     [Header("Projectile Prefab")]
 
     [SerializeField] private GameObject projectile;
-
     [SerializeField] private Transform bulletSpawnLocation;
 
-    [Header("Camera")]
     private Vector3 mousePosition;
 
     [SerializeField] private GameObject gunSprite;
@@ -84,13 +82,13 @@ public class ProjectileWeapon : Weapon
         GameObject projectileClone;
         projectileClone = Instantiate(projectile, bulletSpawnLocation.position, Quaternion.identity);
         Projectile projectileCloneScript = projectileClone.GetComponent<Projectile>();
-        projectileCloneScript.SetProjectileVelocity(GetMousePosX(), GetMousePosY());
+        projectileCloneScript.SetProjectileVelocity(GetMousePosX() - gunSprite.transform.position.x, GetMousePosY() - gunSprite.transform.position.y);
         betweenFireTimeCounter = betweenFireTime; // resets the timer after every bullet is fired. 
     }
 
     private float GunRotation()
     {
-        float mouseAngle = Mathf.Atan2(mousePosition.y, mousePosition.x) * 180/Mathf.PI;
+        float mouseAngle = Mathf.Atan2(mousePosition.y - gunSprite.transform.position.y, mousePosition.x - gunSprite.transform.position.x) * Mathf.Rad2Deg;
 
         return mouseAngle;
     }
@@ -111,10 +109,12 @@ public class ProjectileWeapon : Weapon
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Debug.Log(GetMousePosX() + ", " + GetMousePosY());
-
         gunSprite.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y,
             GunRotation());
+
+        SetReticleXY(mousePosition.x, mousePosition.y);
+
+        Debug.Log(GetMousePosX() + ", " + GetMousePosY());
 
         if (GetWeaponType() == "Bullet" && currentAmmo > 0)
         {

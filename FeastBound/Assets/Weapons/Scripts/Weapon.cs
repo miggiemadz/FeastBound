@@ -18,8 +18,15 @@ public class Weapon : MonoBehaviour {
                     "Melee Type" is a weapon that attacks at close range and usually does not fire a projectile. */
     [SerializeField] private String weaponType;
 
+    [Header("Reticle")]
+    [SerializeField] private GameObject reticle;
+
     // Variable Setters
     public void SetFireRate(float rate) => this.fireRate = rate;
+    public void SetReticleXY(float x, float y)
+    {
+        reticle.transform.position = new Vector3(x, y, 0);
+    }
 
     // Variable Getter
     public float GetFireRate() => this.fireRate;

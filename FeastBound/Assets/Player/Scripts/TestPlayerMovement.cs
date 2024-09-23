@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TestPlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TestPlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        Cursor.visible = false;
     }
 
     private void Update()
