@@ -18,11 +18,10 @@ public class Projectile : MonoBehaviour
     // PROJECTILE TYPE: Bullet or Beam.
     [SerializeField] private String projectileType;
 
-    // PROJECTILE SOURCE: Whether the bullet is fired from the Player or Enemy.
-    [SerializeField] private String projectileSource;
-
     [Header("Bullet Components")]
     private Rigidbody2D rb2d;
+
+    [SerializeField] private CapsuleCollider2D hitBox;
 
     private Vector2 projectileMovement;
 
@@ -42,7 +41,18 @@ public class Projectile : MonoBehaviour
     //Getters
     public float GetProjectileSpeed() => this.projectileSpeed;
     public float GetProjectileSize() => this.projectileSize;
-    public String GetProjectileSource() => this.projectileSource;
+    public float GetProjectileVelocityX() => this.projectileVelocityX;
+    public float GetProjectileVelocityY() => this.projectileVelocityY;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ((collision.CompareTag("Enemy") && gameObject.CompareTag("Player Projectile")) || // Player Bullet hits enemy
+            (collision.CompareTag("Player") && gameObject.CompareTag("Enemey Projectile")) || // Enemy Bullet hits player
+            collision.CompareTag("Boundaries")) // Bullet hits wall
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Awake()
     {
@@ -56,7 +66,11 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        rb2d.velocity = new Vector2(projectileVelocityX, projectileVelocityY).normalized * projectileSpeed; // the bullet travels in a straight line after being fired. 
+        // Bullets are fired in the direction the gun is facing and its speed is based on the projectileSpeed stat.
+        rb2d.velocity = new Vector2(projectileVelocityX, projectileVelocityY).normalized * projectileSpeed; 
+
+        // The size of the bullet changes dependent on the projectileSize stat
         gameObject.transform.localScale = new Vector3(projectileSize, projectileSize, 1);
+
     }
 }

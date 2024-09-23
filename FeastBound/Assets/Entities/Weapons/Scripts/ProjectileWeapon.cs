@@ -82,11 +82,12 @@ public class ProjectileWeapon : Weapon
         GameObject projectileClone;
         projectileClone = Instantiate(projectile, bulletSpawnLocation.position, Quaternion.identity);
         Projectile projectileCloneScript = projectileClone.GetComponent<Projectile>();
+        // this ensures the bullet always fires in the direction the gun is facing relative to its angle in GunRotation().
         projectileCloneScript.SetProjectileVelocity(GetMousePosX() - gunSprite.transform.position.x, GetMousePosY() - gunSprite.transform.position.y);
         betweenFireTimeCounter = betweenFireTime; // resets the timer after every bullet is fired. 
     }
 
-    private float GunRotation()
+    private float GunRotation() // returns the angle the gun should be at as it follows the cursor.
     {
         float mouseAngle = Mathf.Atan2(mousePosition.y - gunSprite.transform.position.y, mousePosition.x - gunSprite.transform.position.x) * Mathf.Rad2Deg;
 
@@ -114,14 +115,12 @@ public class ProjectileWeapon : Weapon
 
         SetReticleXY(mousePosition.x, mousePosition.y);
 
-        Debug.Log(GetMousePosX() + ", " + GetMousePosY());
-
         if (GetWeaponType() == "Bullet" && currentAmmo > 0)
         {
             // starts the fire rate counter if a gun is of the bullet type.
             betweenFireTimeCounter -= this.GetFireRate() * Time.deltaTime;
 
-            // if the left mouse is pressed and the gun is not reloading a bullet is fired initially.
+            // if the left mouse button is pressed and the gun is not reloading a bullet is fired initially.
             if (Input.GetMouseButtonDown(0) && !IsReloading())
             {
                 BulletFire();
