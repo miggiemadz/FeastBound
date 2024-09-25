@@ -8,6 +8,10 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private float enemyHealth;
 
+    [Header("Enemy Components")]
+
+    [SerializeField] private GameObject sprite;
+    private SpriteRenderer spriteRenderer;
 
     // Setters
     public void SetEnemyHealth(float health) => this.enemyHealth = health;
@@ -19,17 +23,21 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.CompareTag("Player Projectile"))
         {
-
+            Projectile projectileScript = collision.GetComponent<Projectile>();
+            enemyHealth -= projectileScript.GetProjectileDamage();
         }
     }
 
-    void Start()
+    void Awake()
     {
-        
+        spriteRenderer = sprite.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

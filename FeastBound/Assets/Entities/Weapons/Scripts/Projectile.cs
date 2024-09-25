@@ -39,6 +39,7 @@ public class Projectile : MonoBehaviour
     }
 
     //Getters
+    public float GetProjectileDamage() => this.projectileDamage;
     public float GetProjectileSpeed() => this.projectileSpeed;
     public float GetProjectileSize() => this.projectileSize;
     public float GetProjectileVelocityX() => this.projectileVelocityX;
