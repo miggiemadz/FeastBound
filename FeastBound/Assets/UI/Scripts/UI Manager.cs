@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     {
         if (weaponScript.IsReloading())
         {
-            ammoText.SetText("Realoading...");
+            ammoText.SetText("Reloading...");
         }
         else
         {

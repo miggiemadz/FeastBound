@@ -13,6 +13,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject sprite;
     private SpriteRenderer spriteRenderer;
 
+    private float hitTimeCount;
+    private float hitTime = .15f;
+
     // Setters
     public void SetEnemyHealth(float health) => this.enemyHealth = health;
 
@@ -25,6 +28,7 @@ public class EnemyController : MonoBehaviour
         {
             Projectile projectileScript = collision.GetComponent<Projectile>();
             enemyHealth -= projectileScript.GetProjectileDamage();
+            hitTimeCount = hitTime;
         }
     }
 
@@ -35,9 +39,21 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        hitTimeCount -= Time.deltaTime;
+        if (hitTimeCount > 0)
+        {
+            spriteRenderer.color = Color.red;
+        }
+        else
+        {
+            spriteRenderer.color = Color.white;
+        }
+
         if (enemyHealth <= 0)
         {
             Destroy(gameObject);
         }
+
+        Debug.Log(enemyHealth);
     }
 }
