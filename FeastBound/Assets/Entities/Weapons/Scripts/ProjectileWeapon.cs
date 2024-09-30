@@ -41,10 +41,6 @@ public class ProjectileWeapon : Weapon
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform bulletSpawnLocation;
 
-    private Vector3 mousePosition;
-
-    [SerializeField] private GameObject gunSprite;
-
     // Setters
     public void SetCurrentAmmo(int amount) => this.currentAmmo = amount; 
     public void SetTotalAmmo(int amount) => this.totalAmmo = amount;
@@ -56,8 +52,6 @@ public class ProjectileWeapon : Weapon
     public int GetTotalAmmo() => this.totalAmmo;
     public float GetReloadSpeed() => this.reloadSpeed;
     public float GetBulletSpread() => this.bulletSpread;
-    public float GetMousePosX() => this.mousePosition.x;
-    public float GetMousePosY() => this.mousePosition.y;
 
     private void Reload()
     {
@@ -83,19 +77,15 @@ public class ProjectileWeapon : Weapon
         projectileClone = Instantiate(projectile, bulletSpawnLocation.position, Quaternion.identity);
         Projectile projectileCloneScript = projectileClone.GetComponent<Projectile>();
         // this ensures the bullet always fires in the direction the gun is facing relative to its angle in GunRotation().
-        projectileCloneScript.SetProjectileVelocity(GetMousePosX() - gunSprite.transform.position.x, GetMousePosY() - gunSprite.transform.position.y);
+        projectileCloneScript.SetProjectileVelocity(GetMousePosX() - GetWeaponSprite().transform.position.x, GetMousePosY() - GetWeaponSprite().transform.position.y);
         betweenFireTimeCounter = betweenFireTime; // resets the timer after every bullet is fired. 
     }
 
-    private float GunRotation() // returns the angle the gun should be at as it follows the cursor.
+    private void Awake()
     {
-        float mouseAngle = Mathf.Atan2(mousePosition.y - gunSprite.transform.position.y, mousePosition.x - gunSprite.transform.position.x) * Mathf.Rad2Deg;
+        reticle = GameObject.Find("Reticle");
 
-        return mouseAngle;
-    }
 
-    private void Start()
-    {
         // Makes sure the current ammo in a gun is equal to the total it can carry when the game is loaded. 
         currentAmmo = chamberTotal;
 
@@ -104,16 +94,12 @@ public class ProjectileWeapon : Weapon
         {
             SetFireRate(100);
         }
+
     }
 
     private void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        gunSprite.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y,
-            GunRotation());
-
-        SetReticleXY(mousePosition.x, mousePosition.y);
+        UpdateWeaponRotation();
 
         if (GetWeaponType() == "Bullet" && currentAmmo > 0)
         {

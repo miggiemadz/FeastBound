@@ -10,26 +10,38 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammoText;
 
     [SerializeField] GameObject weapon;
-    [SerializeField] private ProjectileWeapon weaponScript;
+    private ProjectileWeapon projectileWeaponScript;
+    private MeleeWeapon meleeWeaponScript;
 
     // Start is called before the first frame update
     void Start()
     {
         ammoText = AmmoUI.GetComponent<TextMeshProUGUI>();
-        weaponScript = weapon.GetComponent<ProjectileWeapon>();
-
+        projectileWeaponScript = weapon.GetComponent<ProjectileWeapon>();
+        meleeWeaponScript = weapon.GetComponent<MeleeWeapon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (weaponScript.IsReloading())
+        if (projectileWeaponScript != null)
         {
-            ammoText.SetText("Reloading...");
+            if (projectileWeaponScript.IsReloading())
+            {
+                ammoText.SetText("Reloading...");
+            }
+            else
+            {
+                ammoText.SetText(projectileWeaponScript.GetCurrentAmmo().ToString() + "/" + projectileWeaponScript.GetTotalAmmo().ToString());
+            }
+        }
+        if (meleeWeaponScript != null)
+        {
+            ammoText.SetText("\u221E" + " / " + "\u221E");
         }
         else
         {
-            ammoText.SetText(weaponScript.GetCurrentAmmo().ToString() + "/" + weaponScript.GetTotalAmmo().ToString());
+            ammoText.SetText(" - / - ");
         }
     }
 }

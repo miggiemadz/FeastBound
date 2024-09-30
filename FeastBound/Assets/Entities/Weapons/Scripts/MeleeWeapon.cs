@@ -18,8 +18,15 @@ public class MeleeWeapon : Weapon
     public float GetDamage() => this.weaponDamage;
     public float GetSize() => this.weaponSize;
 
-    void Update()
+    private void Awake()
     {
+        reticle = GameObject.Find("Reticle");
+    }
+
+    private void Update()
+    {
+        UpdateWeaponRotation();
+
         Swap();
     }
 }
