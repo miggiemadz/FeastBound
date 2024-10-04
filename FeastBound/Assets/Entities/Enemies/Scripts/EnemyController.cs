@@ -30,6 +30,13 @@ public class EnemyController : MonoBehaviour
             enemyHealth -= projectileScript.GetProjectileDamage();
             hitTimeCount = hitTime;
         }
+        if(collision.CompareTag("Player Slash"))
+        {
+            GameObject slashParent = collision.transform.parent.gameObject;
+            MeleeWeapon weaponScript = slashParent.transform.parent.gameObject.GetComponent<MeleeWeapon>();
+            enemyHealth -= weaponScript.GetDamage();
+            hitTimeCount = hitTime;
+        }
     }
 
     void Awake()

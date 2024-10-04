@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6274291315443820468}
   - component: {fileID: 6436141100810227084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2614439436840519446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.3571936, w: 0.9340304}
-  m_LocalPosition: {x: 7.1, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4499778274688408006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,9 +126,10 @@ GameObject:
   m_Component:
   - component: {fileID: 443362073104787929}
   - component: {fileID: 2348423904916890781}
-  m_Layer: 0
+  - component: {fileID: 2632769279358945443}
+  m_Layer: 9
   m_Name: Test Prong
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,9 +165,9 @@ MonoBehaviour:
   fireRate: 1
   rarity: 
   weaponType: Bullet
-  reticle: {fileID: 0}
   weaponSprite: {fileID: 2614439436840519446}
   weaponSpriteRenderer: {fileID: 6436141100810227084}
+  weaponCollectCollider: {fileID: 0}
   totalAmmo: 250
   chamberTotal: 15
   reloadSpeed: 0.5
@@ -174,3 +175,38 @@ MonoBehaviour:
   bulletSpread: 0
   projectile: {fileID: 4339420959171742239, guid: 69983fcf07652934e988ba2f88b6bf4e, type: 3}
   bulletSpawnLocation: {fileID: 4499778274688408006}
+--- !u!58 &2632769279358945443
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927946763725497485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5215126, y: 0.83515644}
+  serializedVersion: 2
+  m_Radius: 6.0200434

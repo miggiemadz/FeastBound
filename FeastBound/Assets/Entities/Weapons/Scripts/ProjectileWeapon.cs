@@ -83,9 +83,6 @@ public class ProjectileWeapon : Weapon
 
     private void Awake()
     {
-        reticle = GameObject.Find("Reticle");
-
-
         // Makes sure the current ammo in a gun is equal to the total it can carry when the game is loaded. 
         currentAmmo = chamberTotal;
 
@@ -99,35 +96,45 @@ public class ProjectileWeapon : Weapon
 
     private void Update()
     {
-        UpdateWeaponRotation();
-
-        if (GetWeaponType() == "Bullet" && currentAmmo > 0)
+        if (isCollected() && !isEquipped())
         {
-            // starts the fire rate counter if a gun is of the bullet type.
-            betweenFireTimeCounter -= this.GetFireRate() * Time.deltaTime;
-
-            // if the left mouse button is pressed and the gun is not reloading a bullet is fired initially.
-            if (Input.GetMouseButtonDown(0) && !IsReloading())
-            {
-                BulletFire();
-            }
-            // if the counter is finished, the gun isnt reloading and the left mouse button is held the gun fires at an automatic rate. 
-            if (Input.GetMouseButton(0) && betweenFireTimeCounter <= 0 && !IsReloading())
-            {
-                BulletFire();
-            }
+            gameObject.SetActive(false);
         }
 
-        // This is a timer that starts once the reload key is pressed. *See the Reload() class for what it does*
-        reloadTimeCounter -= reloadSpeed * Time.deltaTime;
-        reloadTimeCounter = Mathf.Max(reloadTimeCounter, 0); // This keeps the value from dropping below zero.
+        if (isEquipped()) {
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            reloadTimeCounter = reloadTime;
-            Reload();
+            gameObject.SetActive(true);
+
+            UpdateWeaponRotation();
+
+            if (GetWeaponType() == "Bullet" && currentAmmo > 0)
+            {
+                // starts the fire rate counter if a gun is of the bullet type.
+                betweenFireTimeCounter -= this.GetFireRate() * Time.deltaTime;
+
+                // if the left mouse button is pressed and the gun is not reloading a bullet is fired initially.
+                if (Input.GetMouseButtonDown(0) && !IsReloading())
+                {
+                    BulletFire();
+                }
+                // if the counter is finished, the gun isnt reloading and the left mouse button is held the gun fires at an automatic rate. 
+                if (Input.GetMouseButton(0) && betweenFireTimeCounter <= 0 && !IsReloading())
+                {
+                    BulletFire();
+                }
+            }
+
+            // This is a timer that starts once the reload key is pressed. *See the Reload() class for what it does*
+            reloadTimeCounter -= reloadSpeed * Time.deltaTime;
+            reloadTimeCounter = Mathf.Max(reloadTimeCounter, 0); // This keeps the value from dropping below zero.
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                reloadTimeCounter = reloadTime;
+                Reload();
+            }
+
+            Swap();
         }
-
-        Swap();
     }
 }

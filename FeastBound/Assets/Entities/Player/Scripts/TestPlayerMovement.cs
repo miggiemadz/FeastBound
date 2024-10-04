@@ -11,6 +11,10 @@ public class TestPlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    [SerializeField] private GameObject weaponManager;
+
+    private bool hasWeapon;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,6 +23,11 @@ public class TestPlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!hasWeapon && weaponManager.transform.childCount != 0)
+        {            
+            hasWeapon = true;
+        }
+
         movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
         rb.velocity = movement * moveSpeed;

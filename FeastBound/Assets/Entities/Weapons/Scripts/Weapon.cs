@@ -19,19 +19,15 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private String weaponType;
 
     [Header("Sprite Components")]
-    [SerializeField] protected GameObject reticle;
-
     private Vector3 mousePosition;
 
     [SerializeField] private GameObject weaponSprite;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
+    [SerializeField] private CircleCollider2D weaponCollectCollider;
+
 
     // Variable Setters
     public void SetFireRate(float rate) => this.fireRate = rate;
-    public void SetReticleXY(float x, float y)
-    {
-        reticle.transform.position = new Vector3(x, y, 0);
-    }
 
     // Variable Getter
     public float GetFireRate() => this.fireRate;
@@ -50,7 +46,8 @@ public class Weapon : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Swapping");
+            GameObject.Find("WeaponManager").transform.GetChild(0).SetAsLastSibling();
+            GameObject.Find("WeaponManager").transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
@@ -64,13 +61,47 @@ public class Weapon : MonoBehaviour {
         if (WeaponRotation() > 90f || WeaponRotation() < -90f)
         {
             weaponSpriteRenderer.flipY = true;
+            Transform leftHand = GameObject.Find("LeftHold").transform;
+            gameObject.transform.position = new Vector3(leftHand.position.x, leftHand.position.y, -1);
         }
         else
         {
             weaponSpriteRenderer.flipY = false;
+            Transform rightHand = GameObject.Find("RightHold").transform;
+            gameObject.transform.position = new Vector3(rightHand.position.x, rightHand.position.y, -1);
         }
-
-        SetReticleXY(mousePosition.x, mousePosition.y);
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (Input.GetKey(KeyCode.F))
+            {
+                gameObject.transform.parent = GameObject.Find("WeaponManager").transform;
+                Destroy(weaponCollectCollider);
+            }
+        }
+    }
+
+    protected bool isEquipped()
+    {
+        Transform targetTransform;
+
+        try
+        {
+            targetTransform = GameObject.Find("WeaponManager").transform.GetChild(0);
+        }
+        catch (System.Exception ex) when (ex is UnityException)
+        {
+            targetTransform = null;
+        }
+
+        return gameObject.transform == targetTransform;
+    }
+
+    protected bool isCollected()
+    {
+        return gameObject.transform.parent == GameObject.Find("WeaponManager").transform;
+    }
 }

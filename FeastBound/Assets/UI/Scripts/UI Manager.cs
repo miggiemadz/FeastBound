@@ -9,39 +9,42 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject AmmoUI;
     [SerializeField] private TextMeshProUGUI ammoText;
 
-    [SerializeField] GameObject weapon;
-    private ProjectileWeapon projectileWeaponScript;
-    private MeleeWeapon meleeWeaponScript;
+    [SerializeField] GameObject weaponManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        ammoText = AmmoUI.GetComponent<TextMeshProUGUI>();
-        projectileWeaponScript = weapon.GetComponent<ProjectileWeapon>();
-        meleeWeaponScript = weapon.GetComponent<MeleeWeapon>();
+        weaponManager = GameObject.Find("WeaponManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (projectileWeaponScript != null)
-        {
-            if (projectileWeaponScript.IsReloading())
-            {
-                ammoText.SetText("Reloading...");
-            }
-            else
-            {
-                ammoText.SetText(projectileWeaponScript.GetCurrentAmmo().ToString() + "/" + projectileWeaponScript.GetTotalAmmo().ToString());
-            }
-        }
-        if (meleeWeaponScript != null)
-        {
-            ammoText.SetText("\u221E" + " / " + "\u221E");
-        }
-        else
+        if (weaponManager.transform.childCount == 0)
         {
             ammoText.SetText(" - / - ");
         }
+
+        else
+        {
+            ProjectileWeapon weaponScript = weaponManager.transform.GetChild(0).GetComponent<ProjectileWeapon>();
+            if (weaponScript != null)
+            {
+                if (weaponScript.IsReloading())
+                {
+                    ammoText.SetText("Reloading...");
+                }
+                else
+                {
+                    ammoText.SetText(weaponScript.GetCurrentAmmo().ToString() + "/" + weaponScript.GetTotalAmmo().ToString());
+                }
+            }
+            else
+            {
+                ammoText.SetText("\u221E" + " / " + "\u221E");
+
+            }
+        }
+
     }
 }
