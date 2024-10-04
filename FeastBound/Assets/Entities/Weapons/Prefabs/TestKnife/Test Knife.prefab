@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1849821780014859491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 1.94, z: 0}
+  m_LocalPosition: {x: 10.9, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -172,6 +172,7 @@ MonoBehaviour:
   weaponType: Melee
   weaponSprite: {fileID: 7930948912063064209}
   weaponSpriteRenderer: {fileID: 3768567270313698147}
+  weaponCollectCollider: {fileID: 0}
   weaponDamage: 0
   weaponSize: 0
   weaponSlashFX: {fileID: 5835527612000949460}
@@ -323,7 +324,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8040865543041392745}
@@ -371,7 +372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d12ac7427d09d714b893b3b08522018b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d871fd3e31e00444092ada11824b65ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

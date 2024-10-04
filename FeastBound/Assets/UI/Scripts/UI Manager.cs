@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject AmmoUI;
     [SerializeField] private TextMeshProUGUI ammoText;
 
-    [SerializeField] GameObject weaponManager;
+    GameObject weaponManager;
 
     // Start is called before the first frame update
     void Start()

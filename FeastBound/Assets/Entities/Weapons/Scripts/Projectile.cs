@@ -21,8 +21,6 @@ public class Projectile : MonoBehaviour
     [Header("Bullet Components")]
     private Rigidbody2D rb2d;
 
-    [SerializeField] private CapsuleCollider2D hitBox;
-
     private Vector2 projectileMovement;
 
     private float projectileVelocityX;

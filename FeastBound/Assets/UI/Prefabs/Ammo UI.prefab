@@ -250,6 +250,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmmoUI: {fileID: 3543115090414586820}
-  ammoText: {fileID: 0}
-  weapon: {fileID: 0}
-  weaponScript: {fileID: 0}
+  ammoText: {fileID: 5720607465318847120}
+  weaponManager: {fileID: 0}
