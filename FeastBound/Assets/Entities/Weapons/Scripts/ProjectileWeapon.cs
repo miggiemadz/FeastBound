@@ -53,6 +53,24 @@ public class ProjectileWeapon : Weapon
     public float GetReloadSpeed() => this.reloadSpeed;
     public float GetBulletSpread() => this.bulletSpread;
 
+    protected override void Start()
+    {
+        base.Start();
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        // Makes sure the current ammo in a gun is equal to the total it can carry when the game is loaded. 
+        currentAmmo = chamberTotal;
+
+        // sets all beam type weapons to a really high fire rate.
+        if (GetWeaponType() == "Beam")
+        {
+            SetFireRate(100);
+        }
+    }
+
     private void Reload()
     {
         // amountRealoaded is the amount of ammo the gun needs to be filled, its calculated by finding the amount remaining in the chamber.
@@ -81,21 +99,10 @@ public class ProjectileWeapon : Weapon
         betweenFireTimeCounter = betweenFireTime; // resets the timer after every bullet is fired. 
     }
 
-    private void Awake()
+    protected override void Update()
     {
-        // Makes sure the current ammo in a gun is equal to the total it can carry when the game is loaded. 
-        currentAmmo = chamberTotal;
+        base.Update();
 
-        // sets all beam type weapons to a really high fire rate.
-        if (GetWeaponType() == "Beam")
-        {
-            SetFireRate(100);
-        }
-
-    }
-
-    private void Update()
-    {
         if (isCollected() && !isEquipped())
         {
             gameObject.SetActive(false);

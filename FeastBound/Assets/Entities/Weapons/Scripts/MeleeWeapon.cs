@@ -29,8 +29,9 @@ public class MeleeWeapon : Weapon
     public float GetDamage() => this.weaponDamage;
     public float GetSize() => this.weaponSize;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         weaponSlashFX.SetActive(false);
         weaponSlashHitBoxCollider = weaponSlashHitBox.GetComponent<PolygonCollider2D>();
         weaponSlashHitBox.SetActive(false);
@@ -43,8 +44,10 @@ public class MeleeWeapon : Weapon
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (isCollected() && !isEquipped())
         {
             gameObject.SetActive(false);

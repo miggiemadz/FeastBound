@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.CompareTag("Enemy") && gameObject.CompareTag("Player Projectile")) || // Player Bullet hits enemy
-            (collision.CompareTag("Player") && gameObject.CompareTag("Enemey Projectile")) || // Enemy Bullet hits player
+            (collision.CompareTag("Player") && gameObject.CompareTag("Enemy Projectile")) || // Enemy Bullet hits player
             collision.CompareTag("Boundaries")) // Bullet hits wall
         {
             Destroy(gameObject);

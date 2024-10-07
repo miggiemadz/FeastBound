@@ -18,12 +18,14 @@ public class Weapon : MonoBehaviour {
                     "Melee Type" is a weapon that attacks at close range and usually does not fire a projectile. */
     [SerializeField] private String weaponType;
 
-    [Header("Sprite Components")]
+    [Header("Components")]
     private Vector3 mousePosition;
 
     [SerializeField] private GameObject weaponSprite;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private CircleCollider2D weaponCollectCollider;
+
+    protected GameObject player;
 
 
     // Variable Setters
@@ -37,9 +39,19 @@ public class Weapon : MonoBehaviour {
     public float GetMousePosY() => this.mousePosition.y;
     public GameObject GetWeaponSprite() => this.weaponSprite;
 
+    protected virtual void Start()
+    {
+        
+    }
+
+    protected virtual void Awake()
+    {
+        player = GameObject.Find("TestPlayer");
+    }
+
     protected float WeaponRotation() // returns the angle the gun should be at as it follows the cursor.
     {
-        return Mathf.Atan2(mousePosition.y - weaponSprite.transform.position.y, mousePosition.x - weaponSprite.transform.position.x) * Mathf.Rad2Deg;
+        return Mathf.Atan2(mousePosition.y - player.transform.position.y, mousePosition.x - player.transform.position.x) * Mathf.Rad2Deg;
     }
 
     protected void Swap() 
@@ -103,5 +115,10 @@ public class Weapon : MonoBehaviour {
     protected bool isCollected()
     {
         return gameObject.transform.parent == GameObject.Find("WeaponManager").transform;
+    }
+
+    protected virtual void Update()
+    {
+        
     }
 }
