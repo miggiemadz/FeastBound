@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e83743ae418624b891c86a86c7b567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 3
   rarity: 
   weaponType: Bullet
   weaponSprite: {fileID: 2614439436840519446}

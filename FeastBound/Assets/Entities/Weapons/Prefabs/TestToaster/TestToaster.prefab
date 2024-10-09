@@ -52,7 +52,7 @@ MonoBehaviour:
   weaponSprite: {fileID: 2722493210156602807}
   weaponSpriteRenderer: {fileID: 2041083715059370620}
   weaponCollectCollider: {fileID: 4432519836851465564}
-  totalAmmo: 100
+  totalAmmo: 50
   chamberTotal: 2
   reloadSpeed: 2
   reloadType: 

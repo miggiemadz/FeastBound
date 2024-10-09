@@ -27,7 +27,6 @@ public class Weapon : MonoBehaviour {
 
     protected GameObject player;
 
-
     // Variable Setters
     public void SetFireRate(float rate) => this.fireRate = rate;
 
