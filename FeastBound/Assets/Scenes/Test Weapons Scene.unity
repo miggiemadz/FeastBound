@@ -175,14 +175,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Knife
       objectReference: {fileID: 0}
-    - target: {fileID: 9088003252581349070, guid: 8de7c093843c2e04ab2e8c22fa4cc622, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088003252581349070, guid: 8de7c093843c2e04ab2e8c22fa4cc622, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -336,14 +328,6 @@ PrefabInstance:
     - target: {fileID: 443362073104787929, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274291315443820468, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274291315443820468, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8927946763725497485, guid: 9ef6a2c729d17bf4a8f76e6d089158da, type: 3}
       propertyPath: m_Name
@@ -654,18 +638,6 @@ PrefabInstance:
     - target: {fileID: 2472058440544581940, guid: b6ba634a7b47c7640af7c9f8f2d88a4c, type: 3}
       propertyPath: m_Name
       value: TestToaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240746405051413414, guid: b6ba634a7b47c7640af7c9f8f2d88a4c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240746405051413414, guid: b6ba634a7b47c7640af7c9f8f2d88a4c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829027764661301862, guid: b6ba634a7b47c7640af7c9f8f2d88a4c, type: 3}
-      propertyPath: fireRate
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5864445671086730231, guid: b6ba634a7b47c7640af7c9f8f2d88a4c, type: 3}
       propertyPath: m_LocalPosition.x
