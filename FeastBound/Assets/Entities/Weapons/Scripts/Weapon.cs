@@ -18,17 +18,21 @@ public class Weapon : MonoBehaviour {
                     "Melee Type" is a weapon that attacks at close range and usually does not fire a projectile. */
     [SerializeField] private String weaponType;
 
+    [SerializeField] protected bool isEquipped;
+    [SerializeField] private bool isCollected;
+
     [Header("Components")]
     private Vector3 mousePosition;
 
     [SerializeField] private GameObject weaponSprite;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
-    [SerializeField] private CircleCollider2D weaponCollectCollider;
 
     protected GameObject player;
 
     // Variable Setters
     public void SetFireRate(float rate) => this.fireRate = rate;
+    public void SetEquipped(bool value) => this.isEquipped = value;
+    public void SetCollected(bool value) => this.isCollected = value;
 
     // Variable Getter
     public float GetFireRate() => this.fireRate;
@@ -37,29 +41,22 @@ public class Weapon : MonoBehaviour {
     public float GetMousePosX() => this.mousePosition.x;
     public float GetMousePosY() => this.mousePosition.y;
     public GameObject GetWeaponSprite() => this.weaponSprite;
+    public bool GetEquipped() => this.isEquipped;
+    public bool GetCollected() => isCollected;
 
     protected virtual void Start()
     {
-        
+        player = GameObject.Find("TestPlayer");
     }
 
     protected virtual void Awake()
     {
-        player = GameObject.Find("TestPlayer");
+
     }
 
     protected float WeaponRotation() // returns the angle the gun should be at as it follows the cursor.
     {
         return Mathf.Atan2(mousePosition.y - player.transform.position.y, mousePosition.x - player.transform.position.x) * Mathf.Rad2Deg;
-    }
-
-    protected void Swap() 
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GameObject.Find("WeaponManager").transform.GetChild(0).SetAsLastSibling();
-            GameObject.Find("WeaponManager").transform.GetChild(0).gameObject.SetActive(true);
-        }
     }
 
     protected void UpdateWeaponRotation()
@@ -83,41 +80,8 @@ public class Weapon : MonoBehaviour {
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (Input.GetKey(KeyCode.F))
-            {
-                gameObject.transform.parent = GameObject.Find("WeaponManager").transform;
-                Destroy(weaponCollectCollider);
-            }
-        }
-    }
-
-    protected bool isEquipped()
-    {
-        Transform targetTransform;
-
-        try
-        {
-            targetTransform = GameObject.Find("WeaponManager").transform.GetChild(0);
-        }
-        catch (System.Exception ex) when (ex is UnityException)
-        {
-            targetTransform = null;
-        }
-
-        return gameObject.transform == targetTransform;
-    }
-
-    protected bool isCollected()
-    {
-        return gameObject.transform.parent == GameObject.Find("WeaponManager").transform;
-    }
-
     protected virtual void Update()
     {
-        
+
     }
 }

@@ -9,27 +9,28 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject AmmoUI;
     [SerializeField] private TextMeshProUGUI ammoText;
 
-    GameObject weaponManager;
+    [SerializeField] private GameObject weaponsItemsObject;
+    private WeaponsItemsManager weaponsItemsScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        weaponManager = GameObject.Find("WeaponManager");
+        weaponsItemsScript = weaponsItemsObject.GetComponent<WeaponsItemsManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (weaponManager.transform.childCount == 0)
+        if (weaponsItemsScript.GetNumWeapons() <= 0)
         {
             ammoText.SetText(" - / - ");
         }
 
         else
         {
-            ProjectileWeapon weaponScript = weaponManager.transform.GetChild(0).GetComponent<ProjectileWeapon>();
-            if (weaponScript != null)
+            if (weaponsItemsScript.GetCurrentWeapon().GetWeaponType() == "Bullet")
             {
+                ProjectileWeapon weaponScript = (ProjectileWeapon)weaponsItemsScript.GetCurrentWeapon();
                 if (weaponScript.IsReloading())
                 {
                     ammoText.SetText("Reloading...");

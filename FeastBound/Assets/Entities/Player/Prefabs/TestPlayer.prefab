@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  weaponManager: {fileID: 5243706135130993351}
+  weaponsItemsObject: {fileID: 5243706135130993351}
 --- !u!1 &5243706135130993351
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6824203294746387929}
+  - component: {fileID: 1815073013723245710}
   m_Layer: 0
   m_Name: WeaponManager
   m_TagString: Untagged
@@ -145,6 +146,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1299737029036844653}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815073013723245710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243706135130993351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec0b5807af9c434899a176046b16f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  items: []
 --- !u!1 &6040897815907264147
 GameObject:
   m_ObjectHideFlags: 0

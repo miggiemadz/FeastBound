@@ -63,7 +63,7 @@ public class Projectile : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Bullets are fired in the direction the gun is facing and its speed is based on the projectileSpeed stat.
         rb2d.velocity = new Vector2(projectileVelocityX, projectileVelocityY).normalized * projectileSpeed; 

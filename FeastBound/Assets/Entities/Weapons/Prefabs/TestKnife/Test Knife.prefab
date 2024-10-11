@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 4859311034115021142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.7757163, y: 2.2733822, z: 0.14111416}
+  m_LocalPosition: {x: -6.7757163, y: 2.2733822, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -172,7 +172,6 @@ MonoBehaviour:
   weaponType: Melee
   weaponSprite: {fileID: 7930948912063064209}
   weaponSpriteRenderer: {fileID: 3768567270313698147}
-  weaponCollectCollider: {fileID: 0}
   weaponDamage: 0
   weaponSize: 0
   weaponSlashFX: {fileID: 5835527612000949460}

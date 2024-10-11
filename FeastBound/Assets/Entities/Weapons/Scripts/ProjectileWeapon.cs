@@ -103,15 +103,10 @@ public class ProjectileWeapon : Weapon
     {
         base.Update();
 
-        if (isCollected() && !isEquipped())
+        if (GetEquipped())
         {
-            gameObject.SetActive(false);
-        }
-
-        if (isEquipped()) {
 
             gameObject.SetActive(true);
-
             UpdateWeaponRotation();
 
             if (GetWeaponType() == "Bullet" && currentAmmo > 0)
@@ -140,8 +135,6 @@ public class ProjectileWeapon : Weapon
                 reloadTimeCounter = reloadTime;
                 Reload();
             }
-
-            Swap();
         }
     }
 }

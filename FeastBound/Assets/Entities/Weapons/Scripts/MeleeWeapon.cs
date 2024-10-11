@@ -48,14 +48,12 @@ public class MeleeWeapon : Weapon
     {
         base.Update();
 
-        if (isCollected() && !isEquipped())
+        if (GetEquipped())
         {
-            gameObject.SetActive(false);
-        }
 
-        if (isEquipped())
-        {
             gameObject.SetActive(true);
+            UpdateWeaponRotation();
+
             swingTimerCount -= Time.deltaTime;
             swingTimerCount = Mathf.Max(swingTimerCount, 0);
 
@@ -73,11 +71,8 @@ public class MeleeWeapon : Weapon
             weaponSlashFX.transform.position = new Vector3(weaponTip.position.x, weaponTip.position.y, -1);
             weaponSlashFX.transform.rotation = Quaternion.Euler(0, 0, WeaponRotation());
 
-            UpdateWeaponRotation();
-
             Swing();
-
-            Swap();
         }
-    }
+
+    }  
 }
