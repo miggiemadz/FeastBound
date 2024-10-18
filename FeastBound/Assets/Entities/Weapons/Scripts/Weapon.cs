@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour {
 
     protected virtual void Start()
     {
-        player = GameObject.Find("TestPlayer");
+        player = GameObject.Find("Player");
     }
 
     protected virtual void Awake()
