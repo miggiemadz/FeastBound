@@ -105,7 +105,7 @@ public class ProjectileWeapon : Weapon
 
         if (GetEquipped())
         {
-
+            // Only updates the weapons rotation as well as making the object active if its the equipped weapon.
             gameObject.SetActive(true);
             UpdateWeaponRotation();
 

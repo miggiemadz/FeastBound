@@ -1,0 +1,11 @@
+coffee
+movementSpeed, 5
+
+energyDrink
+fireRate, 3, reloadSpeed, -2
+
+bread
+currentHealth, 25
+
+ammoBox
+currentAmmo, 50

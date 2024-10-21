@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour {
                     "Melee Type" is a weapon that attacks at close range and usually does not fire a projectile. */
     [SerializeField] private String weaponType;
 
+    // Checks if the weapon has both been equipped and if its been collected by the player.
     [SerializeField] protected bool isEquipped;
     [SerializeField] private bool isCollected;
 
@@ -54,18 +55,21 @@ public class Weapon : MonoBehaviour {
 
     }
 
-    protected float WeaponRotation() // returns the angle the gun should be at as it follows the cursor.
+    // Sets the rotation value of the weapon sprite in respect to the players transform and the mouse position.
+    protected float WeaponRotation()
     {
         return Mathf.Atan2(mousePosition.y - player.transform.position.y, mousePosition.x - player.transform.position.x) * Mathf.Rad2Deg;
     }
 
     protected void UpdateWeaponRotation()
     {
+        // Sets the cursor's position relative to its position in the world not it's position on the screen.
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         weaponSprite.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y,
             WeaponRotation());
         
+        // Rotates the sprite of the weapon to simulate switching hands as the rotation goes past it's respective y-axis.
         if (WeaponRotation() > 90f || WeaponRotation() < -90f)
         {
             weaponSpriteRenderer.flipY = true;
