@@ -67,7 +67,7 @@ public class ProjectileWeapon : Weapon
         // sets all beam type weapons to a really high fire rate.
         if (GetWeaponType() == "Beam")
         {
-            SetFireRate(100);
+            FireRate = 100;
         }
     }
 

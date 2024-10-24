@@ -7,6 +7,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     [Header("Universal Weapon Stats")]
+    // STAT MODIFIER: The multiplier on different stats based on items picked up.
+    [SerializeField] private StatModifier statModifier;
+
     // FIRE RATE: How fast each bullet is fired from the gun. 
     [SerializeField] private float fireRate;
 
@@ -30,8 +33,9 @@ public class Weapon : MonoBehaviour {
 
     protected GameObject player;
 
+    public float FireRate { get => fireRate; set => fireRate = value * statModifier.WeaponFireRateMod; }
+
     // Variable Setters
-    public void SetFireRate(float rate) => this.fireRate = rate;
     public void SetEquipped(bool value) => this.isEquipped = value;
     public void SetCollected(bool value) => this.isCollected = value;
 

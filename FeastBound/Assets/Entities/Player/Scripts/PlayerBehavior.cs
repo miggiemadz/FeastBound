@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class TestPlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
+    // STAT MODIFIER: The multiplier on different stats based on items picked up.
+    [SerializeField] private StatModifier statModifier;
+
     // The value that determine the magnitude of the players speed.
     [SerializeField] private float moveSpeed;
 

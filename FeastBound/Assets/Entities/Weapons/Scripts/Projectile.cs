@@ -6,6 +6,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [Header("Projectile Stats")]
+    // STAT MODIFIER: The multiplier on different stats based on items picked up.
+    [SerializeField] private StatModifier statModifier;
+
     // PROJECTILE DAMAGE: A range of values that will determine how much hp is lost when hit (4-6 hp per hit).
     [SerializeField] private float projectileDamage;
 
