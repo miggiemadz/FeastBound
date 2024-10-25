@@ -11,13 +11,13 @@ public class WeaponsItemsManager : MonoBehaviour
     [SerializeField] private List<Item> items;
 
     // Returns the size of the weapons List to determine how many weapons the player is holding. 
-    public int GetNumWeapons() => weapons.Count;
+    public int NumWeapons { get { return weapons.Count; } }
 
     // Same as the weapons but for items.
-    public int GetNumItems() => items.Count;
+    public int NumItems { get { return items.Count; } }
 
-    // Returns the first object in the weapons class to determine what weapon the player currently has. 
-    public Weapon GetCurrentWeapon() => weapons[0];
+    // Returns the first object in the weapons class to determine what weapon the player currently has.
+    public Weapon CurrentWeapon {  get { return weapons[0]; } }
 
     private int frames;
 
@@ -32,7 +32,7 @@ public class WeaponsItemsManager : MonoBehaviour
           * This is done by taking the first value in the last, removing and pushing it to the back of the list. **/
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Weapon currentWeapon = weapons[0];
+            Weapon currentWeapon = CurrentWeapon;
             weapons.RemoveAt(0);
             weapons.Add(currentWeapon);
         }
@@ -49,14 +49,14 @@ public class WeaponsItemsManager : MonoBehaviour
                 // Runs through the weapons List and consistently sets the first weapon to the equipped and active object.
                 foreach (Weapon weapon in weapons)
                 {
-                    if (weapon != GetCurrentWeapon())
+                    if (weapon != CurrentWeapon)
                     {
-                        weapon.SetEquipped(false);
+                        weapon.IsEquipped = false;
                         weapon.gameObject.SetActive(false);
                     }
                     else
                     {
-                        weapon.SetEquipped(true);
+                        weapon.IsEquipped = true; ;
                         weapon.gameObject.SetActive(true);
                     }
                 }
@@ -67,14 +67,21 @@ public class WeaponsItemsManager : MonoBehaviour
             foreach (Transform child in gameObject.transform)
             {
                 Weapon weapon = child.GetComponent<Weapon>();
-                if (weapon != null && !weapon.GetCollected())
+                Item item = child.GetComponent<Item>();
+
+                if (weapon != null && !weapon.IsCollected)
                 {
                     weapons.Add(weapon);
-                    weapon.SetCollected(true);
+                    weapon.IsCollected = true;
+                }
+
+                if (item  != null && !item.IsCollected)
+                {
+                    items.Add(item);
+                    item.IsCollected = true;
                 }
             }
-
-            SwapWeapons();
         }
+        SwapWeapons();
     }
 }

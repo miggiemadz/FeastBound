@@ -21,13 +21,9 @@ public class MeleeWeapon : Weapon
     private float swingTimer = 0.25f;
     private float swingTimerCount;
 
-    // Setters
-    public void SetDamage(float damage) => this.weaponDamage = damage;
-    public void SetSize(float size) => this.weaponSize = size;
-
-    // Getters
-    public float GetDamage() => this.weaponDamage;
-    public float GetSize() => this.weaponSize;
+    // Getters & Setters
+    public float Damage { get => weaponDamage; set => weaponDamage = value; }
+    public float Size { get => weaponSize; set => weaponSize = value; }
 
     protected override void Awake()
     {
@@ -48,7 +44,7 @@ public class MeleeWeapon : Weapon
     {
         base.Update();
 
-        if (GetEquipped())
+        if (IsEquipped)
         {
 
             gameObject.SetActive(true);

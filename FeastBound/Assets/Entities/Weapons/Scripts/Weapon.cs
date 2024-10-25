@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour {
 
     [Header("Universal Weapon Stats")]
     // STAT MODIFIER: The multiplier on different stats based on items picked up.
-    [SerializeField] private StatModifier statModifier;
+    [SerializeField] protected StatModifier statModifier;
 
     // FIRE RATE: How fast each bullet is fired from the gun. 
     [SerializeField] private float fireRate;
@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private String weaponType;
 
     // Checks if the weapon has both been equipped and if its been collected by the player.
-    [SerializeField] protected bool isEquipped;
+    [SerializeField] private bool isEquipped;
     [SerializeField] private bool isCollected;
 
     [Header("Components")]
@@ -33,25 +33,20 @@ public class Weapon : MonoBehaviour {
 
     protected GameObject player;
 
-    public float FireRate { get => fireRate; set => fireRate = value * statModifier.WeaponFireRateMod; }
-
-    // Variable Setters
-    public void SetEquipped(bool value) => this.isEquipped = value;
-    public void SetCollected(bool value) => this.isCollected = value;
-
-    // Variable Getter
-    public float GetFireRate() => this.fireRate;
-    public String GetWeaponType() => this.weaponType;
-    public String GetWeaponRarity() => this.rarity;
-    public float GetMousePosX() => this.mousePosition.x;
-    public float GetMousePosY() => this.mousePosition.y;
-    public GameObject GetWeaponSprite() => this.weaponSprite;
-    public bool GetEquipped() => this.isEquipped;
-    public bool GetCollected() => isCollected;
+    // Getters & Setters
+    public float FireRate { get => fireRate * statModifier.WeaponFireRateMod; set => fireRate = value; }
+    public string Rarity { get => rarity; set => rarity = value; }
+    public string WeaponType { get => weaponType; set => weaponType = value; }
+    public bool IsEquipped { get => isEquipped; set => isEquipped = value; }
+    public bool IsCollected { get => isCollected; set => isCollected = value; }
+    public float MousePosX { get => this.mousePosition.x; }
+    public float MousePosY { get => this.mousePosition.y; }
+    public GameObject WeaponSprite { get => this.weaponSprite; }
 
     protected virtual void Start()
     {
         player = GameObject.Find("Player");
+        statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
     }
 
     protected virtual void Awake()

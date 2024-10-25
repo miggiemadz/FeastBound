@@ -1,0 +1,8 @@
+Coffee
+movementSpeed 1.5
+EnergyDrink
+fireRate 2.5 reloadSpeed .50
+Bread
+currentHealth 25
+AmmoBox
+currentAmmo 50

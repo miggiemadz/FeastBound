@@ -24,27 +24,14 @@ public class Projectile : MonoBehaviour
     [Header("Bullet Components")]
     private Rigidbody2D rb2d;
 
-    private Vector2 projectileMovement;
+    private Vector2 projectileVelocity;
 
-    private float projectileVelocityX;
-    private float projectileVelocityY;
-
-    // Setters
-    public void SetProjectileDamage(float damage) => this.projectileDamage = damage;
-    public void SetProjectileSpeed(float speed) => this.projectileSpeed = speed;
-    public void SetProjectileSize(float size) => this.projectileSize = size;
-    public void SetProjectileVelocity(float x, float y)
-    {
-        this.projectileVelocityX = x;
-        this.projectileVelocityY = y;
-    }
-
-    //Getters
-    public float GetProjectileDamage() => this.projectileDamage;
-    public float GetProjectileSpeed() => this.projectileSpeed;
-    public float GetProjectileSize() => this.projectileSize;
-    public float GetProjectileVelocityX() => this.projectileVelocityX;
-    public float GetProjectileVelocityY() => this.projectileVelocityY;
+    // Getters & Setters
+    public float ProjectileDamage { get => projectileDamage * statModifier.ProjectileDamageMod; set => projectileDamage = value; }
+    public float ProjectileSpeed { get => projectileSpeed * statModifier.ProjectileSpeedMod; set => projectileSpeed = value; }
+    public float ProjectileSize { get => projectileSize * statModifier.ProjectileSizeMod; set => projectileSize = value; }
+    public Vector2 ProjectileVelocity { get => projectileVelocity; set => projectileVelocity = value; }
+    public string ProjectileType { get => projectileType; set => projectileType = value; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -63,13 +50,13 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-
+        statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
     }
 
     private void FixedUpdate()
     {
         // Bullets are fired in the direction the gun is facing and its speed is based on the projectileSpeed stat.
-        rb2d.velocity = new Vector2(projectileVelocityX, projectileVelocityY).normalized * projectileSpeed; 
+        rb2d.velocity = projectileVelocity.normalized * projectileSpeed; 
 
         // The size of the bullet changes dependent on the projectileSize stat
         gameObject.transform.localScale = new Vector3(projectileSize, projectileSize, 1);

@@ -15,7 +15,7 @@ public class WeaponNameManager : MonoBehaviour
     {
         weaponText.transform.position = weaponTextPosition.position;
 
-        if (weaponScript.GetCollected())
+        if (weaponScript.IsCollected)
         {
             Destroy(weaponText);
         }

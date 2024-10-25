@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcde15cd71068b740a29187dc5da47c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statModifier: {fileID: 0}
   moveSpeed: 5
   weaponsItemsObject: {fileID: 5243706135130993351}
 --- !u!1 &5243706135130993351
@@ -125,7 +126,7 @@ GameObject:
   - component: {fileID: 6824203294746387929}
   - component: {fileID: 1815073013723245710}
   m_Layer: 0
-  m_Name: WeaponManager
+  m_Name: WeaponItemManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

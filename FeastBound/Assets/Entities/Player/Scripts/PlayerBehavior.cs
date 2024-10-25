@@ -21,6 +21,8 @@ public class TestPlayerMovement : MonoBehaviour
     [SerializeField] private GameObject weaponsItemsObject;
     private WeaponsItemsManager weaponsItemsScript;
 
+    // Getters & Setters
+    public float MoveSpeed { get => moveSpeed * statModifier.PlayerSpeedMod; set => moveSpeed = value; }
 
     // If a player is colliding with an item or weapons pick up radius they can pick the object up by pressing the "F" key.
     private void OnTriggerStay2D(Collider2D collision)
@@ -34,6 +36,24 @@ public class TestPlayerMovement : MonoBehaviour
                 Destroy(collision);
             }
         }
+
+        if (collision.CompareTag("Item"))
+        {
+            GameObject item = collision.gameObject;
+            if (Input.GetKey(KeyCode.F))
+            {
+                Item itemScript = item.GetComponent<Item>();
+                itemScript.UpdateStatModifier();
+                item.transform.parent = weaponsItemsObject.transform;
+                item.SetActive(false);
+                Destroy(collision);
+            }
+        }
+    }
+
+    private void Start()
+    {
+        statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
     }
 
     private void Awake()
@@ -52,7 +72,7 @@ public class TestPlayerMovement : MonoBehaviour
     {
         movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
-        rb.velocity = movement * moveSpeed;
+        rb.velocity = movement * MoveSpeed;
     }
 
 }

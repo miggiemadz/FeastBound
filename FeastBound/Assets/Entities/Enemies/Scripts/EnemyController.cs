@@ -27,14 +27,14 @@ public class EnemyController : MonoBehaviour
         if(collision.CompareTag("Player Projectile"))
         {
             Projectile projectileScript = collision.GetComponent<Projectile>();
-            enemyHealth -= projectileScript.GetProjectileDamage();
+            enemyHealth -= projectileScript.ProjectileDamage;
             hitTimeCount = hitTime;
         }
         if(collision.CompareTag("Player Slash"))
         {
             GameObject slashParent = collision.transform.parent.gameObject;
             MeleeWeapon weaponScript = slashParent.transform.parent.gameObject.GetComponent<MeleeWeapon>();
-            enemyHealth -= weaponScript.GetDamage();
+            enemyHealth -= weaponScript.Damage;
             hitTimeCount = hitTime;
         }
     }
