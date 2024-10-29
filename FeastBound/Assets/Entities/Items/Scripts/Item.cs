@@ -15,6 +15,9 @@ public class Item : MonoBehaviour
     // The name of the item
     [SerializeField] private string itemName;
 
+    // The Rarity of the item.
+    [SerializeField] private string itemRarity;
+
     // A dictionary of the item and what stat changes it will provide for the player.
     private Dictionary<string, float> statChanges = new Dictionary<string, float>();
 

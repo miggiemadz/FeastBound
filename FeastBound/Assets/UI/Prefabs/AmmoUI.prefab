@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 6216721367861311722}
   - component: {fileID: 6480152993191017678}
   m_Layer: 5
-  m_Name: Ammo UI
+  m_Name: AmmoUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

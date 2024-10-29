@@ -1,0 +1,148 @@
+Coffee
+movementSpeed 1.5
+EnergyDrink
+fireRate 2.5 reloadSpeed 0.5
+Bread
+maxHealth 25
+AmmoBox
+currentAmmo 50
+Pepper
+damage 2 fireRate 1.0
+SpicySauce
+fireRate 3.0 movementSpeed 1.2
+ButterKnife
+damage 1.5 reloadSpeed 0.8
+CinnamonRoll
+maxHealth 20 movementSpeed 0.9
+Honey
+movementSpeed 1.3
+SugarRush
+fireRate 1.8 movementSpeed 1.5
+Steak
+maxHealth 30
+GrilledCheese
+maxHealth 15
+Watermelon
+maxHealth 20 movementSpeed 1.1
+HotPepper
+damage 2.3 fireRate 1.2
+JuiceBox
+movementSpeed 1.2
+FrenchFries
+fireRate 1.5 reloadSpeed 0.9
+Knife
+damage 1.4
+KetchupBottle
+fireRate 1.3
+ChiliPowder
+damage 2.0 movementSpeed 1.1
+Potato
+maxHealth 10
+ApplePie
+maxHealth 15 movementSpeed 1.1
+SodaCan
+movementSpeed 1.2
+Nachos
+maxHealth 25
+Donut
+fireRate 1.6 movementSpeed 1.2
+Muffin
+maxHealth 10
+Cupcake
+fireRate 1.3
+Cookie
+movementSpeed 1.3
+Bagel
+maxHealth 10
+GranolaBar
+maxHealth 15
+PizzaSlice
+fireRate 1.7 reloadSpeed 0.6
+IceCream
+movementSpeed 1.4
+Spork
+damage 1.1
+FryingPan
+damage 1.8 reloadSpeed 0.7
+Skillet
+damage 2.2
+Grater
+damage 1.6
+Tomato
+maxHealth 10
+Avocado
+maxHealth 15 movementSpeed 1.1
+Lemon
+movementSpeed 1.3
+OrangeJuice
+movementSpeed 1.2
+Espresso
+fireRate 2.1 reloadSpeed 0.6
+Garlic
+damage 1.3
+SoySauce
+reloadSpeed 0.9
+Sriracha
+fireRate 1.9 movementSpeed 1.1
+GreenTea
+movementSpeed 1.2
+ProteinShake
+maxHealth 15
+OliveOil
+damage 1.5
+Eggplant
+maxHealth 10
+BaconStrip
+fireRate 1.4
+CheeseWheel
+maxHealth 20
+Marshmallow
+movementSpeed 1.1
+Popcorn
+fireRate 1.5 reloadSpeed 0.8
+PumpkinPie
+maxHealth 25
+SausageLink
+damage 1.6
+NutBar
+maxHealth 10 movementSpeed 1.1
+WhippedCream
+movementSpeed 1.2
+BagOfChips
+fireRate 1.2 reloadSpeed 0.8
+BBQSauce
+fireRate 1.3
+Salt
+damage 1.1
+PepperMill
+damage 1.7
+Pickle
+maxHealth 5
+Onion
+damage 1.3
+Carrot
+maxHealth 8
+CeleryStick
+movementSpeed 1.1
+ChiliFlakes
+damage 1.4
+Cucumber
+movementSpeed 1.2
+GingerRoot
+movementSpeed 1.3
+RiceBowl
+maxHealth 10
+CornCob
+fireRate 1.2
+NoodleSoup
+maxHealth 20
+HotSauce
+fireRate 2.2 movementSpeed 1.1
+Taco
+fireRate 1.5 reloadSpeed 0.8
+Quesadilla
+maxHealth 15
+Churro
+fireRate 1.4 movementSpeed 1.2
+Butter
+maxHealth 5

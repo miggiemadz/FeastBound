@@ -11,6 +11,8 @@ public class WeaponNameManager : MonoBehaviour
 
     [SerializeField] private Weapon weaponScript;
 
+    [SerializeField] private Item itemScript;
+
     private void Update()
     {
         weaponText.transform.position = weaponTextPosition.position;
