@@ -8,8 +8,8 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [Header("Item Identifiers")]
-    /* Active: An item that is held by the player and has to be activated manually.
-       Passive: An item that provides an immediate constant change. */
+    /* StatMod: An item that is held by the player and has to be activated manually.
+       Resource: An item that provides an immediate constant change. */
     [SerializeField] private string itemType;
 
     // The name of the item
@@ -21,8 +21,7 @@ public class Item : MonoBehaviour
     // A dictionary of the item and what stat changes it will provide for the player.
     private Dictionary<string, float> statChanges = new Dictionary<string, float>();
 
-    [Header("Components")]
-    [SerializeField] private StatModifier statModifier;
+    private StatModifier statModifier;
 
     private bool isEquipped;
     private bool isCollected;
@@ -33,7 +32,7 @@ public class Item : MonoBehaviour
     public bool IsEquipped { get => this.isEquipped; set => this.isEquipped = value; }
     public bool IsCollected { get => this.isCollected; set => this.isCollected = value; }
 
-    private void Start()
+    private void Awake()
     {
         statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
         try
@@ -90,6 +89,11 @@ public class Item : MonoBehaviour
                     statModifier.PlayerTotalHealthMod *= StatChanges[stat]; break;
             }
         }
+    }
+
+    public void UpdateResources()
+    {
+
     }
 
     private void Update()

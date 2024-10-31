@@ -116,6 +116,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8270363082659710436}
+  - {fileID: 3734651359428925702}
+  - {fileID: 3778591615734571549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &530441731054801199
@@ -132,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 
   itemName: EnergyDrink
+  itemRarity: 
   statModifier: {fileID: 0}
 --- !u!58 &230187760679614791
 CircleCollider2D:
@@ -168,3 +171,140 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &9079348097484526904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3734651359428925702}
+  m_Layer: 10
+  m_Name: TextPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3734651359428925702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079348097484526904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8889323528566373163}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8213351666572933827
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8889323528566373163}
+    m_Modifications:
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 756
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 425
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3826.5532
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2132.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922289124899949921, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_Name
+      value: NameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187750876085868999, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_text
+      value: Energy Drink
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+--- !u!224 &3778591615734571549 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5011361651561191646, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+  m_PrefabInstance: {fileID: 8213351666572933827}
+  m_PrefabAsset: {fileID: 0}

@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1903901791655539777}
   m_Layer: 9
-  m_Name: WeaponTextPosition
+  m_Name: TextPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,8 +55,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121253471510427463}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 4.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -179,12 +179,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.7757163, y: 2.2733822, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9088003252581349070}
-  - {fileID: 3060759914600808613}
   - {fileID: 1903901791655539777}
+  - {fileID: 3060759914600808613}
   - {fileID: 2947180885791550778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,7 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69813d3c81818c1429855979e96c2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statModifier: {fileID: 0}
   fireRate: 0
   rarity: 
   weaponType: Melee
@@ -245,9 +244,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.040991306, y: 0.7139385}
+  m_Offset: {x: -0.023590326, y: 0.020674586}
   serializedVersion: 2
-  m_Radius: 6.174854
+  m_Radius: 0.62377906
 --- !u!1 &5835527612000949460
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,8 +273,8 @@ Transform:
   m_GameObject: {fileID: 5835527612000949460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.07, y: 5.66, z: -0.14111416}
-  m_LocalScale: {x: 1.184, y: 1.505, z: 1}
+  m_LocalPosition: {x: 1, y: -0.05, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3420252191718455217}
@@ -358,8 +357,8 @@ Transform:
   m_GameObject: {fileID: 7930948912063064209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.7, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8040865543041392745}
@@ -517,6 +516,10 @@ PrefabInstance:
     - target: {fileID: 5922289124899949921, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
       propertyPath: m_Name
       value: NameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187750876085868999, guid: c9bc859c08f9f124db842dc76f7189aa, type: 3}
+      propertyPath: m_text
+      value: Knife
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour {
 
     [Header("Universal Weapon Stats")]
     // STAT MODIFIER: The multiplier on different stats based on items picked up.
-    [SerializeField] protected StatModifier statModifier;
+    protected StatModifier statModifier;
 
     // FIRE RATE: How fast each bullet is fired from the gun. 
     [SerializeField] private float fireRate;
@@ -45,13 +45,13 @@ public class Weapon : MonoBehaviour {
 
     protected virtual void Start()
     {
-        player = GameObject.Find("Player");
-        statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
+
     }
 
     protected virtual void Awake()
     {
-
+        player = GameObject.Find("Player");
+        statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
     }
 
     // Sets the rotation value of the weapon sprite in respect to the players transform and the mouse position.
