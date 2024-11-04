@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statModifier: {fileID: 0}
   moveSpeed: 5
+  MAX_PLAYER_HEALTH: 100
+  currentPlayerHealth: 60
   weaponsItemsObject: {fileID: 5243706135130993351}
 --- !u!1 &5243706135130993351
 GameObject:

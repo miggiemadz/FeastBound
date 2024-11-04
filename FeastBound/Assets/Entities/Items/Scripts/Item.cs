@@ -22,6 +22,8 @@ public class Item : MonoBehaviour
     private Dictionary<string, float> statChanges = new Dictionary<string, float>();
 
     private StatModifier statModifier;
+    private WeaponsItemsManager weaponsItemsManager;
+    private PlayerBehavior playerBehaviorScript;
 
     private bool isEquipped;
     private bool isCollected;
@@ -35,6 +37,9 @@ public class Item : MonoBehaviour
     private void Awake()
     {
         statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
+        weaponsItemsManager = GameObject.Find("WeaponItemManager").GetComponent<WeaponsItemsManager>();
+        playerBehaviorScript = GameObject.Find("Player").GetComponent<PlayerBehavior>();
+
         try
         {
             string[] itemFileLines = File.ReadAllLines("Assets/Entities/Universal/Scripts/roguelike_items.txt");
@@ -93,7 +98,24 @@ public class Item : MonoBehaviour
 
     public void UpdateResources()
     {
-
+        foreach (String stat in StatChanges.Keys)
+        {
+            switch (stat)
+            {
+                case "currentHealth":
+                    playerBehaviorScript.UpdateHealth(StatChanges[stat] * playerBehaviorScript.MAX_PLAYER_HEALTH1 * .01f);
+                    break;
+                case "currentAmmo":
+                    foreach (Weapon weapon in weaponsItemsManager.Weapons)
+                    {
+                        if (weapon is ProjectileWeapon projectileWeapon)
+                        {
+                            projectileWeapon.RefillAmmo((float) projectileWeapon.MaxAmmo * (StatChanges[stat] * .01f));
+                        }
+                    }
+                    break;
+            }
+        }
     }
 
     private void Update()

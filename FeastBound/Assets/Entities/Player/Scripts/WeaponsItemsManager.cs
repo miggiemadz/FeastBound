@@ -10,6 +10,9 @@ public class WeaponsItemsManager : MonoBehaviour
     [SerializeField] private List<Weapon> weapons;
     [SerializeField] private List<Item> items;
 
+    private List<ProjectileWeapon> projectileWeapons;
+    private List<MeleeWeapon> meleeWeapons;
+
     // Returns the size of the weapons List to determine how many weapons the player is holding. 
     public int NumWeapons { get { return weapons.Count; } }
 
@@ -18,6 +21,10 @@ public class WeaponsItemsManager : MonoBehaviour
 
     // Returns the first object in the weapons class to determine what weapon the player currently has.
     public Weapon CurrentWeapon {  get { return weapons[0]; } }
+
+    public List<Weapon> Weapons { get => weapons; set => weapons = value; }
+    public List<ProjectileWeapon> ProjectileWeapons { get => projectileWeapons; set => projectileWeapons = value; }
+    public List<MeleeWeapon> MeleeWeapons { get => meleeWeapons; set => meleeWeapons = value; }
 
     private int frames;
 
@@ -37,6 +44,8 @@ public class WeaponsItemsManager : MonoBehaviour
             weapons.Add(currentWeapon);
         }
     }
+
+
 
     void Update()
     {

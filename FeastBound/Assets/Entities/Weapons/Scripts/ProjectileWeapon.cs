@@ -15,6 +15,8 @@ public class ProjectileWeapon : Weapon
     // CHAMBER TOTAL: The total amount of ammo a gun can hold in its chamber.
     [SerializeField] private int chamberTotal;
 
+    private int maxAmmo;
+
     // CURRENT AMMO: The current amount of ammo in the chamber of the weapon. 
     private int currentAmmo;
 
@@ -48,10 +50,11 @@ public class ProjectileWeapon : Weapon
     public float ReloadSpeed { get => reloadSpeed * statModifier.WeaponReloadSpeedMod; set => reloadSpeed = value; }
     public string ReloadType { get => reloadType; set => reloadType = value; }
     public float BulletSpread { get => bulletSpread; set => bulletSpread = value; }
+    public int MaxAmmo { get => maxAmmo; set => maxAmmo = value; }
 
     protected override void Start()
     {
-        base.Start();
+        MaxAmmo = TotalAmmo;
     }
 
     protected override void Awake()
@@ -80,6 +83,17 @@ public class ProjectileWeapon : Weapon
     public bool IsReloading() 
     {
         return reloadTimeCounter > 0 && reloadTimeCounter < reloadTime;
+    }
+
+    public void RefillAmmo(float amount)
+    {
+        Debug.Log(MaxAmmo);
+        Debug.Log(amount);
+        TotalAmmo += (int) amount;
+        if (TotalAmmo > MaxAmmo)
+        {
+            TotalAmmo = MaxAmmo;
+        }
     }
 
     private void BulletFire()

@@ -211,13 +211,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6480152993191017678, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
-      propertyPath: weaponsItemsObject
-      value: 
-      objectReference: {fileID: 1372720993}
     - target: {fileID: 6546915857663293156, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
       propertyPath: m_Name
-      value: AmmoUI
+      value: GameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268144254380148611, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268144254380148611, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870443271362619019, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870443271362619019, guid: 59649a2ddc15f5147bd33b655fe765cf, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -651,10 +663,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3125268394185367470, guid: de1d58bd9e0ac0d4a95064fa681b0bee, type: 3}
-      propertyPath: itemType
-      value: StatMod
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -887,10 +895,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 530441731054801199, guid: d250eb78cfe767f4595fdc4cfc3eb46d, type: 3}
-      propertyPath: itemType
-      value: StatMod
-      objectReference: {fileID: 0}
     - target: {fileID: 6180661538769271932, guid: d250eb78cfe767f4595fdc4cfc3eb46d, type: 3}
       propertyPath: m_Name
       value: EnergyDrinkItem
@@ -1272,11 +1276,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.700037, y: 2.0534587}
   m_EdgeRadius: 0
---- !u!1 &1372720993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5243706135130993351, guid: b48cc7ff55faa6045ac0e20ce54d51e4, type: 3}
-  m_PrefabInstance: {fileID: 8296048611316726017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400906456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,10 +1802,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1451125610293443888, guid: c8fa0fec43856464c82885ba90814391, type: 3}
-      propertyPath: itemType
-      value: Resource
-      objectReference: {fileID: 0}
     - target: {fileID: 6539678680147020398, guid: c8fa0fec43856464c82885ba90814391, type: 3}
       propertyPath: m_Name
       value: BreadItem
@@ -1867,10 +1862,6 @@ PrefabInstance:
     - target: {fileID: 2002955278637464192, guid: c9a38c00dd8092b439e3c38ddb526072, type: 3}
       propertyPath: m_Name
       value: AmmoBoxItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 8005853496966167499, guid: c9a38c00dd8092b439e3c38ddb526072, type: 3}
-      propertyPath: itemType
-      value: Resource
       objectReference: {fileID: 0}
     - target: {fileID: 8468527142408211658, guid: c9a38c00dd8092b439e3c38ddb526072, type: 3}
       propertyPath: m_LocalPosition.x

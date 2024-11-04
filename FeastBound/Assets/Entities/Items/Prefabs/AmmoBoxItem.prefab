@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a8369525b54604db3a503ef3122d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 
+  itemType: Resource
   itemName: AmmoBox
   itemRarity: 
 --- !u!58 &678089865663284060

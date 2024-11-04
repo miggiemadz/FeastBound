@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TestPlayerMovement : MonoBehaviour
+public class PlayerBehavior : MonoBehaviour
 {
     [Header("Movement")]
     // STAT MODIFIER: The multiplier on different stats based on items picked up.
@@ -16,6 +16,9 @@ public class TestPlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    [SerializeField] private float MAX_PLAYER_HEALTH;
+    [SerializeField] private float currentPlayerHealth;
+
     [Header("Weapon Management")]
     // The weapons and items manager
     [SerializeField] private GameObject weaponsItemsObject;
@@ -23,6 +26,8 @@ public class TestPlayerMovement : MonoBehaviour
 
     // Getters & Setters
     public float MoveSpeed { get => moveSpeed * statModifier.PlayerSpeedMod; set => moveSpeed = value; }
+    public float CurrentPlayerHealth { get => currentPlayerHealth; set => currentPlayerHealth = value; }
+    public float MAX_PLAYER_HEALTH1 { get => MAX_PLAYER_HEALTH; set => MAX_PLAYER_HEALTH = value; }
 
     // If a player is colliding with an item or weapons pick up radius they can pick the object up by pressing the "F" key.
     private void OnTriggerStay2D(Collider2D collision)
@@ -44,6 +49,7 @@ public class TestPlayerMovement : MonoBehaviour
             {
                 Item itemScript = item.GetComponent<Item>();
                 itemScript.UpdateStatModifier();
+                itemScript.UpdateResources();
                 item.transform.parent = weaponsItemsObject.transform;
                 item.SetActive(false);
                 Destroy(collision);
@@ -54,6 +60,7 @@ public class TestPlayerMovement : MonoBehaviour
     private void Start()
     {
         statModifier = GameObject.Find("StatModifier").GetComponent<StatModifier>();
+        currentPlayerHealth = MAX_PLAYER_HEALTH;
     }
 
     private void Awake()
@@ -61,6 +68,15 @@ public class TestPlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         weaponsItemsScript = weaponsItemsObject.GetComponent<WeaponsItemsManager>();
         Cursor.visible = false;
+    }
+
+    public void UpdateHealth(float value)
+    {
+        CurrentPlayerHealth += value;
+        if (CurrentPlayerHealth > MAX_PLAYER_HEALTH)
+        {
+            CurrentPlayerHealth = MAX_PLAYER_HEALTH;
+        }
     }
 
     private void Update()
