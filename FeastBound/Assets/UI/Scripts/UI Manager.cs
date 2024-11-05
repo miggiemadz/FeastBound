@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI ammoText;
     private GameObject weaponsItemsObject;
     private WeaponsItemsManager weaponsItemsScript;
+    private Image weaponImage;
 
     // Health UI Components
     private PlayerBehavior playerBehaviorScript;
@@ -33,12 +34,23 @@ public class UIManager : MonoBehaviour
         ammoText = AmmoUI.GetComponent<TextMeshProUGUI>();
         weaponsItemsObject = GameObject.Find("WeaponItemManager");
         weaponsItemsScript = weaponsItemsObject.GetComponent<WeaponsItemsManager>();
+        weaponImage = transform.GetChild(2).GetComponent<Image>();
     }
 
     void Update()
     {
         healthText.SetText(playerBehaviorScript.CurrentPlayerHealth.ToString() + " / " + playerBehaviorScript.MAX_PLAYER_HEALTH1);
         healthSlider.value = playerBehaviorScript.CurrentPlayerHealth;
+
+        if (weaponsItemsScript.Weapons.Count != 0)
+        {
+            weaponImage.gameObject.SetActive(true);
+            weaponImage.sprite = weaponsItemsScript.CurrentWeapon.GetComponentInChildren<SpriteRenderer>().sprite;
+        }
+        else
+        {
+            weaponImage.gameObject.SetActive(false);
+        }
 
         if (weaponsItemsScript.NumWeapons <= 0)
         {
