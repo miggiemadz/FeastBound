@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5ba92527f4e0b33418746946207ae5fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,12 +129,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e83743ae418624b891c86a86c7b567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   fireRate: 0
   rarity: 
-  Size: 0
   weaponType: Beam
+  isEquipped: 0
+  isCollected: 0
+  weaponSprite: {fileID: 0}
+  weaponSpriteRenderer: {fileID: 0}
   totalAmmo: 0
-  currentAmmo: 0
+  chamberTotal: 0
   reloadSpeed: 0
+  reloadType: 
   bulletSpread: 0
+  projectile: {fileID: 0}
+  bulletSpawnLocation: {fileID: 0}
