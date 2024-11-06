@@ -5,13 +5,15 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    [Header("Enemy Stats")]
-
+    // Enemy Stats
     [SerializeField] private float enemyHealth;
+    [SerializeField] private float enemySpeed;
+    [SerializeField] private string enemyType;
 
     // Sprite Components
     private GameObject sprite;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     // NavMesh Components
     private Transform target;
@@ -25,20 +27,23 @@ public class EnemyController : MonoBehaviour
     private float hitTimeCount;
     private float hitTime = .15f;
 
-    // Setters
-    public void SetEnemyHealth(float health) => this.enemyHealth = health;
+    // Attacking Variables
+    private bool isAttacking;
 
-    //Getters
-    public float GetEnemyHealth() => this.enemyHealth;
+    // Getters & Setters
+    public float EnemyHealth { get => enemyHealth; set => enemyHealth = value; }
+    public float EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
 
     void Awake()
     {
         sprite = transform.GetChild(0).gameObject;
         spriteRenderer = sprite.GetComponent<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
 
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = enemySpeed;
 
         target = GameObject.Find("Player").transform;
     }
@@ -58,6 +63,37 @@ public class EnemyController : MonoBehaviour
             enemyHealth -= weaponScript.Damage;
             hitTimeCount = hitTime;
         }
+        if (collision.CompareTag("Player")  && enemyType == "Melee")
+        {
+
+        }
+    }
+
+    private float GetDirection(float directionx, float directiony)
+    {
+        directionx = Mathf.Sign(directionx);
+        directiony = Mathf.Sign(directiony);
+
+        // Define directional mappings
+        var directionMap = new Dictionary<(float, float), float>
+    {
+        { (0, 1), 1 },   // North
+        { (1, 1), 2 },   // North East
+        { (1, 0), 3 },   // East
+        { (1, -1), 4 },  // South East
+        { (0, -1), 5 },  // South
+        { (-1, -1), 6 }, // South West
+        { (-1, 0), 7 },  // West
+        { (-1, 1), 8 }   // North West
+    };
+
+        // Try to get the direction number based on the (x, y) pair
+        if (directionMap.TryGetValue((directionx, directiony), out float direction))
+        {
+            return direction;
+        }
+
+        return 0; // Default if no match is found
     }
 
     void Update()
@@ -68,14 +104,23 @@ public class EnemyController : MonoBehaviour
         moveDirectionX = currentPosition.x - lastPosition.x;
         moveDirectionY = currentPosition.y - lastPosition.y;
 
-        Debug.Log(Mathf.Round(moveDirectionX * 100f) + ", " + Mathf.Round(moveDirectionY * 100f));
+        if (!isAttacking)
+        {
+            agent.speed = enemySpeed;
+        }
+        else
+        {
+            agent.speed = 0;
+        }
+
+        animator.SetFloat("DirectionValue", GetDirection(moveDirectionX, moveDirectionY));
 
         agent.SetDestination(target.position);
 
         hitTimeCount -= Time.deltaTime;
         if (hitTimeCount > 0)
         {
-            spriteRenderer.color = Color.red;
+            spriteRenderer.color = new Color(173, 173, 173);
         }
         else
         {
@@ -86,7 +131,5 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Debug.Log(enemyHealth);
     }
 }

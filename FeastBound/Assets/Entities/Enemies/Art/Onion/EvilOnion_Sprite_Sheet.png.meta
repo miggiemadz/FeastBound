@@ -1,0 +1,844 @@
+fileFormatVersion: 2
+guid: 8996a850592ced84289d3f1197e66f28
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2088
+        width: 217
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c60a44e223fe3f47b87f9656c718c70
+      internalID: 26404389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 2099
+        width: 207
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4817ae100f1054e9f2ce57eecb9f98
+      internalID: -917477332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 2089
+        width: 221
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2604b882c4e3900449540832ced16e8e
+      internalID: -651086770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 2099
+        width: 207
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded75f78d54c5f544a017d3dbd13e57d
+      internalID: -851818181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1801
+        width: 217
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b34864feb86884494d212be1726ec5
+      internalID: 2084962259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1812
+        width: 208
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa16e101e89aa144bc3b60212ea6552
+      internalID: -491950978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1802
+        width: 221
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b8a798c6bc013448de945746f9125e
+      internalID: 1330968085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1812
+        width: 207
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14ed331d7611ec4e889f67891408459
+      internalID: 177941348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1504
+        width: 203
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ca4a5cb2a5fcd4fae7f49db564fad7
+      internalID: 844339280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1508
+        width: 203
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865cf27d338dffd44abbc48b4f4f0d82
+      internalID: -427029461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1505
+        width: 203
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49cb352189bfab4c8cfc089010fbe7f
+      internalID: -1490628210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1508
+        width: 203
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06bfd10279135940a26f40813ddad69
+      internalID: -296080287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1211
+        width: 202
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2583fa65a09d224e9821e3a37a08a8b
+      internalID: -730338039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1216
+        width: 202
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371b4f42feabbf44b8ba5c93d6c1f525
+      internalID: -297560998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1211
+        width: 202
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80554161b4b01a448dcf9d6e03ae85e
+      internalID: 1651158580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1216
+        width: 203
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef96c49a4c7f6004d9dc7cad2f245c8c
+      internalID: -679038327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 929
+        width: 213
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec380c3096a4c8c4badd5ecf57391f07
+      internalID: 1261504813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 937
+        width: 198
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8753e362eca7a47b6165658210ef94
+      internalID: -1840995512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 929
+        width: 218
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c635ed5071f44c43a1b801ad1fef9ab
+      internalID: -1411833957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 937
+        width: 198
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307c89e06e9452a47b4a1bd2efc17e20
+      internalID: 1286764492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 638
+        width: 212
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89e8120e3e3f314fbc8be27453fecaa
+      internalID: 1370356931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 645
+        width: 199
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0a273cca738b9459e133f45742728c
+      internalID: 1325057808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 638
+        width: 218
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5f17ab9849312458f2f8ef9b515d37
+      internalID: -98332124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 645
+        width: 200
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa9d66d4b539bc4eab96b58ba10b2b6
+      internalID: 150645129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 340
+        width: 218
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b1eb802ba261a4287e82098445855b
+      internalID: -1615197745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 347
+        width: 198
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52c4ddf0e1fb4747b330ccf4390e891
+      internalID: -1170788162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 340
+        width: 216
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e62340bd0c8284f84f59c63a5faade
+      internalID: -136389025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 347
+        width: 198
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abda4579f373cae4a9cc060970b957f3
+      internalID: -831279408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 51
+        width: 218
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecd03bf1ca77b3478b0c594cdaba2d2
+      internalID: -1942537241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 57
+        width: 199
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70934394d0ed7947a75be0c89e24794
+      internalID: -820476754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 51
+        width: 216
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3f471430d4757458592ec91a0097d1
+      internalID: -379298852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilOnion_Sprite_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 57
+        width: 199
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1da80c182621449a9ec3358b25bf3b
+      internalID: -333022121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      EvilOnion_Sprite_Sheet_0: 26404389
+      EvilOnion_Sprite_Sheet_1: -917477332
+      EvilOnion_Sprite_Sheet_10: -1490628210
+      EvilOnion_Sprite_Sheet_11: -296080287
+      EvilOnion_Sprite_Sheet_12: -730338039
+      EvilOnion_Sprite_Sheet_13: -297560998
+      EvilOnion_Sprite_Sheet_14: 1651158580
+      EvilOnion_Sprite_Sheet_15: -679038327
+      EvilOnion_Sprite_Sheet_16: 1261504813
+      EvilOnion_Sprite_Sheet_17: -1840995512
+      EvilOnion_Sprite_Sheet_18: -1411833957
+      EvilOnion_Sprite_Sheet_19: 1286764492
+      EvilOnion_Sprite_Sheet_2: -651086770
+      EvilOnion_Sprite_Sheet_20: 1370356931
+      EvilOnion_Sprite_Sheet_21: 1325057808
+      EvilOnion_Sprite_Sheet_22: -98332124
+      EvilOnion_Sprite_Sheet_23: 150645129
+      EvilOnion_Sprite_Sheet_24: -1615197745
+      EvilOnion_Sprite_Sheet_25: -1170788162
+      EvilOnion_Sprite_Sheet_26: -136389025
+      EvilOnion_Sprite_Sheet_27: -831279408
+      EvilOnion_Sprite_Sheet_28: -1942537241
+      EvilOnion_Sprite_Sheet_29: -820476754
+      EvilOnion_Sprite_Sheet_3: -851818181
+      EvilOnion_Sprite_Sheet_30: -379298852
+      EvilOnion_Sprite_Sheet_31: -333022121
+      EvilOnion_Sprite_Sheet_4: 2084962259
+      EvilOnion_Sprite_Sheet_5: -491950978
+      EvilOnion_Sprite_Sheet_6: 1330968085
+      EvilOnion_Sprite_Sheet_7: 177941348
+      EvilOnion_Sprite_Sheet_8: 844339280
+      EvilOnion_Sprite_Sheet_9: -427029461
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
