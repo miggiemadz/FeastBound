@@ -752,6 +752,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: EvilOnion
       objectReference: {fileID: 0}
+    - target: {fileID: 8396729112966879509, guid: 9e03d4be7a0c92e4b8db4c575afedc02, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 26404389, guid: 8996a850592ced84289d3f1197e66f28, type: 3}
+    - target: {fileID: 8396729112966879509, guid: 9e03d4be7a0c92e4b8db4c575afedc02, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396729112966879509, guid: 9e03d4be7a0c92e4b8db4c575afedc02, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396729112966879509, guid: 9e03d4be7a0c92e4b8db4c575afedc02, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

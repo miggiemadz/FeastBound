@@ -207,7 +207,7 @@ MonoBehaviour:
   isCollected: 0
   weaponSprite: {fileID: 7930948912063064209}
   weaponSpriteRenderer: {fileID: 3768567270313698147}
-  weaponDamage: 0
+  weaponDamage: 4.5
   weaponSize: 0
   weaponSlashFX: {fileID: 5835527612000949460}
   weaponTip: {fileID: 8040865543041392745}

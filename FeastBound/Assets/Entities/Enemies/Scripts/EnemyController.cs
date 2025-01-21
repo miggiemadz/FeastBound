@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float enemyHealth;
     [SerializeField] private float enemySpeed;
     [SerializeField] private string enemyType;
+    [SerializeField] private float hitSpeed;
 
     // Sprite Components
     private GameObject sprite;
@@ -24,8 +26,9 @@ public class EnemyController : MonoBehaviour
     private float moveDirectionY;
 
     // Hitbox timers
+    private bool isHit;
     private float hitTimeCount;
-    private float hitTime = .15f;
+    private float hitTime = .25f;
 
     // Attacking Variables
     private bool isAttacking;
@@ -36,8 +39,7 @@ public class EnemyController : MonoBehaviour
 
     void Awake()
     {
-        sprite = transform.GetChild(0).gameObject;
-        spriteRenderer = sprite.GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
 
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -98,13 +100,15 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        isHit = hitTimeCount > 0;
+
         lastPosition = currentPosition;
         currentPosition = gameObject.transform.position;
 
         moveDirectionX = currentPosition.x - lastPosition.x;
         moveDirectionY = currentPosition.y - lastPosition.y;
 
-        if (!isAttacking)
+        if (!isAttacking && !isHit)
         {
             agent.speed = enemySpeed;
         }
@@ -118,9 +122,10 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(target.position);
 
         hitTimeCount -= Time.deltaTime;
-        if (hitTimeCount > 0)
+        if (isHit)
         {
-            spriteRenderer.color = new Color(173, 173, 173);
+            spriteRenderer.color = Color.red;
+            agent.speed = hitSpeed;
         }
         else
         {
@@ -131,5 +136,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Debug.Log(isHit);
     }
 }
