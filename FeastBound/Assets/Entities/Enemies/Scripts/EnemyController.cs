@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
 
         // Define directional mappings
         var directionMap = new Dictionary<(float, float), float>
-    {
+        {
         { (0, 1), 1 },   // North
         { (1, 1), 2 },   // North East
         { (1, 0), 3 },   // East
@@ -87,7 +87,7 @@ public class EnemyController : MonoBehaviour
         { (-1, -1), 6 }, // South West
         { (-1, 0), 7 },  // West
         { (-1, 1), 8 }   // North West
-    };
+        };
 
         // Try to get the direction number based on the (x, y) pair
         if (directionMap.TryGetValue((directionx, directiony), out float direction))
