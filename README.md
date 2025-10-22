@@ -1,7 +1,7 @@
 # FeastBound
 
 **FeastBound** is a 2D top-down roguelike game developed as a solo learning project by **Miguel Torres**.  
-The project focused on mastering **dynamic blueprint scripting** in Unreal Engine to streamline the creation of weapons, items, and gameplay systems.  
+The project focused on mastering **dynamic blueprint scripting** in Unity Engine to streamline the creation of weapons, items, and gameplay systems.  
 While the project was shelved, it represents a key milestone in understanding scalable gameplay architecture and design principles.
 
 ---
