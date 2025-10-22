@@ -9,7 +9,7 @@ While the project was shelved, it represents a key milestone in understanding sc
 ## 🎮 Project Overview
 
 FeastBound was designed as a fast-paced roguelike where players explore procedurally influenced environments and experiment with a wide variety of weapons.  
-The main technical goal of the project was to create **modular gameplay systems** using Unreal Engine Blueprints that could easily support new content and mechanics.
+The main technical goal of the project was to create **modular gameplay systems** using Unity Engine Blueprints that could easily support new content and mechanics.
 
 ---
 
@@ -23,8 +23,7 @@ The main technical goal of the project was to create **modular gameplay systems*
 ## ⚙️ Key Features
 
 - Fully dynamic **weapon and item blueprint system**  
-- Top-down **roguelike combat mechanics**  
-- Procedural variation in gameplay encounters  
+- Top-down **roguelike combat mechanics**    
 - Designed for rapid content expansion and iteration  
 
 ---
@@ -33,7 +32,7 @@ The main technical goal of the project was to create **modular gameplay systems*
 
 | Area | Tools / Technologies |
 |------|-----------------------|
-| **Engine** | Unreal Engine (Blueprints) |
+| **Engine** | Unity Engine |
 | **Programming Focus** | Gameplay Systems, Dynamic Blueprint Architecture |
 | **Art Collaboration** | Keiko (2D Assets) |
 | **Platform Target** | PC |
@@ -44,13 +43,13 @@ The main technical goal of the project was to create **modular gameplay systems*
 
 **Status:** 💤 *Shelved*  
 **Reason:** Paused due to increased workload and a shift in project interest.  
-Despite its shelved state, the project serves as a personal benchmark for improving technical and design proficiency in Unreal Engine development.
+Despite its shelved state, the project serves as a personal benchmark for improving technical and design proficiency in Unity Engine development.
 
 ---
 
 ## 🧠 Lessons Learned
 
-- Building modular gameplay systems with Blueprints significantly speeds up content iteration.  
+- Building modular gameplay systems with blueprints significantly speeds up content iteration.  
 - Developing solo provides valuable insight into scope management and production pacing.  
 - Collaboration with artists improves visual cohesion and workflow planning, even in small projects.
 
